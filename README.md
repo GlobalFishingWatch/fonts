@@ -1,36 +1,20 @@
-# Open Font Glyphs for GL Styles
-
-This project packages the most common free fonts with
-[fontnik](https://github.com/mapbox/fontnik) so you don't have to
-worry about [SDL](https://www.mapbox.com/blog/text-signed-distance-fields/)
-and [gzipped PBFs](https://github.com/mapbox/mapbox-gl-js/issues/830).
-The fonts are deployed to https://free.tilehosting.com/ which also supports concatenating fonts.
-
-## Configure Mapbox GL Style JSON
-
-Your current Mapbox GL Style JSON configuration for `glyphs` will look like this.
-
-```javascript
-"glyphs": "mapbox://fonts/openmaptiles/{fontstack}/{range}.pbf",
-```
-
-In order to use the fonts without a Mapbox API key edit your Mapbox GL Style JSON and change the endpoint for `glyphs` to `http://fonts.openmaptiles.org/{fontstack}/{range}.pbf`.
-
-```javascript
-"glyphs": "http://fonts.openmaptiles.org/{fontstack}/{range}.pbf",
-```
+Forked from https://github.com/openmaptiles/fonts 
 
 ## Supported Font Families
 
 The following fonts that are available in Mapbox Studio are supported.
 
-* Noto Sans (patched by Klokan Technologies)
-* Open Sans
-* PT Sans
-* Roboto
-* Metropolis
+* Roboto Medium + Italic
+* Roboto Mono Light + Italic
 
 ## Package the Fonts
+
+Fontnik binaries are only provided for node v6, start with:
+
+```
+nvm install 6
+nvm use 6
+```
 
 Install required packages:
 
@@ -44,6 +28,7 @@ Generate fonts:
 node ./generate.js
 ```
 The PBFs will created be in the `_output` directory.
+They need to be moved to the client repo.
 
 ## Font License
 
